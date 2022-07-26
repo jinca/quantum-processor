@@ -2,25 +2,19 @@
 
 class Vertex:
     """ Define vertex itself """
-    def __init__(self, node):
-        self.id = node
+    def __init__(self, frequency):
+        self.frequency = frequency
         self.adjacent = {}
 
     """ Define floating point values for each qubit frequency and for each coupling strenght """
-    def __float__(self):
-        return float(self.id) + ' adjacent: ' + float([x.id for x in self.adjacent])
-
-    """ Define the frequency of the neighbor """
-    def add_neighbor(self, neighbor, freq=0):
-        self.adjacent[neighbor] = freq
+    def add_neighbor(self, neighbor, strength=0):
+        self.adjacent[neighbor] = strength
 
     def get_connections(self):
         return self.adjacent.keys()  
 
-    def get_id(self):
-        return self.id
 
-    def get_freq(self, neighbor):
+    def get_frequency(self, neighbor):
         return self.adjacent[neighbor]
 
 class Graph:
