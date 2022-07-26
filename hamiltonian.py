@@ -1,18 +1,24 @@
 """ This file is a module to be called in the main.py program """
 
 class Vertex:
-    """ Define vertex itself """
+    """ Define a vertex and its frequency """
     def __init__(self, frequency):
         self.frequency = frequency
         self.adjacent = {}
+    
+    """ Represent the vertex and its frequency """
+    def __str__(self):
+        return f'<Vertex:{self.frequency}>'
 
-    """ Define floating point values for each qubit frequency and for each coupling strenght """
+    def __repr__(self):
+        return self.__str__()
+
+    """ Add each coupling strenght """
     def add_neighbor(self, neighbor, strength=0):
         self.adjacent[neighbor] = strength
 
     def get_connections(self):
         return self.adjacent.keys()  
-
 
     def get_frequency(self, neighbor):
         return self.adjacent[neighbor]
@@ -21,6 +27,9 @@ class Graph:
     def __init__(self):
         self.vert_dict = {}
         self.num_vertices = 0
+
+    def __str__(self):
+        return f'<Graph:{list(self.vert_dict.items())}>'
 
     def __iter__(self):
         return iter(self.vert_dict.values())
