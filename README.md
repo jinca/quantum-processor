@@ -7,8 +7,7 @@ A program that prints the Hamiltonian in a specific format
 
 *Example input:*
 
-$$ω_1 = 10.0, ω_2 = 15.0, ω_3 = 5.5, ω_4 = 12.2$$
-$$J_{1,2} = 0.5, J_{2,3} = 0.6, J_{3,4} = 0.3, J_{4,1} = 0.55$$
+$$ω_1 = 10.0, ω_2 = 15.0, ω_3 = 5.5, ω_4 = 12.2, J_{1,2} = 0.5, J_{2,3} = 0.6, J_{3,4} = 0.3, J_{4,1} = 0.55$$
 
 *Example output:*
 
