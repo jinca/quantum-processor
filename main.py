@@ -7,3 +7,12 @@ class Graph:
     def __init__(self):
         self.vert_dict = {}
         self.num_vertices = 0
+
+class Hamiltonian:
+    def print_Hamiltonian(self):
+        pass
+
+if __name__ == '__main__':
+
+    h = Hamiltonian()
+    h.print_Hamiltonian()
