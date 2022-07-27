@@ -2,7 +2,8 @@
 
 class Vertex:
     """ Define a vertex and its frequency """
-    def __init__(self, frequency):
+    def __init__(self, id, frequency):
+        self.id = id
         self.frequency = frequency
         self.adjacent = {}
     
@@ -67,8 +68,8 @@ class Hamiltonian:
     def sum(self):
         output = []
 
-        for index, vertex in enumerate(self.graph.get_vertices()):
-            output.append(f'{vertex.frequency/2}Z{index+1}')
+        for vertex in self.graph.get_vertices():
+            output.append(f'{vertex.frequency/2}Z{vertex.id}')
 
         for index,edge in enumerate(self.graph.get_edges()):
             output.append(f'')

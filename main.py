@@ -1,9 +1,9 @@
 import hamiltonian
  
-v1 = hamiltonian.Vertex(10.0)
-v2 = hamiltonian.Vertex(15.0)
-v3 = hamiltonian.Vertex(5.5)
-v4 = hamiltonian.Vertex(12.2)
+v1 = hamiltonian.Vertex(1, 10.0)
+v2 = hamiltonian.Vertex(2, 15.0)
+v3 = hamiltonian.Vertex(3, 5.5)
+v4 = hamiltonian.Vertex(4, 12.2)
 
 graph = hamiltonian.Graph()
 graph.add_vertex(v1)
