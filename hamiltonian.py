@@ -56,7 +56,7 @@ class Graph:
 
     def get_edges(self):
         output = []
-        """ __vertex is the inner vertex"""
+        """ __vertex is the inner vertex to calculate strength"""
         for vertex in self.get_vertices():
             for _vertex in vertex.adjacent.keys():
                 output.append((vertex,_vertex))
@@ -73,10 +73,10 @@ class Hamiltonian:
         for vertex in self.graph.get_vertices():
             output.append(f'{vertex.frequency/2}Z{vertex.id}')
 
-        for index,edge in enumerate(self.graph.get_edges()):
-            print(edge)
-            #output.append(f'')
+        for edge in self.graph.get_edges():
+            start_vertex, end_vertex = edge
+            output.append(f'{start_vertex.adjacent[end_vertex]}X{start_vertex.id}X{end_vertex.id}')
         return output
 
     def print_Hamiltonian(self):
-        print('H=',''.join(self.sum()))
+        print('H=',' + '.join(self.sum()))
