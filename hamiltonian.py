@@ -1,15 +1,15 @@
 """ This file is a module to be called in the main.py program """
 
-class Vertex:
-    """ Define a vertex and its frequency """
+class Qubit:
+    """ Define a qubit and its frequency """
     def __init__(self, id, frequency):
         self.id = id
         self.frequency = frequency
         self.adjacent = {}
     
-    """ Represent the vertex and its frequency """
+    """ Represent the qubit and its frequency """
     def __str__(self):
-        return f'<Vertex:{self.frequency}>'
+        return f'<Qubit:{self.frequency}>'
 
     def __repr__(self):
         return self.__str__()
@@ -35,7 +35,7 @@ class Graph:
     def __iter__(self):
         return iter(self.vert_dict.values())
 
-    def add_vertex(self, vertex):
+    def add_qubit(self, vertex):
         self.num_vertices = self.num_vertices + 1
         self.vert_dict[vertex] = vertex
 
@@ -44,9 +44,9 @@ class Graph:
 
     def add_edge(self, frm, to, cost = 0):
         if frm not in self.vert_dict:
-            self.add_vertex(frm)
+            self.add_qubit(frm)
         if to not in self.vert_dict:
-            self.add_vertex(to)
+            self.add_qubit(to)
 
         self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
         self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
