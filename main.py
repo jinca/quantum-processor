@@ -2,8 +2,8 @@ import hamiltonian
  
 v1 = hamiltonian.Qubit(1, 10.0)
 v2 = hamiltonian.Qubit(2, 15.0)
-v3 = hamiltonian.Qubit(3, 5.5)
-v4 = hamiltonian.Qubit(4, 12.2)
+v3 = hamiltonian.CoaxmonQubit(3, 2, 4)
+v4 = hamiltonian.RectanglemonQubit(4, 2, 2, 4, 4)
 
 graph = hamiltonian.Graph()
 graph.add_qubit(v1)

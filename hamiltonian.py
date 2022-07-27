@@ -32,6 +32,7 @@ class CoaxmonQubit(Qubit):
         self.id = id
         self.outer_radius = outer_radius
         self.inner_radius = inner_radius
+        self.adjacent = {}
 
 class RectanglemonQubit(Qubit):
 
@@ -41,6 +42,7 @@ class RectanglemonQubit(Qubit):
         self.rect_one_length = rect_one_length
         self.rect_two_height = rect_two_height
         self.rect_two_length = rect_two_length
+        self.adjacent = {}
 
 class Graph:
     def __init__(self):
@@ -89,7 +91,12 @@ class Hamiltonian:
         output = []
 
         for vertex in self.graph.get_vertices():
-            output.append(f'{vertex.frequency/2}Z{vertex.id}')
+            if isinstance(vertex, CoaxmonQubit):
+                output.append(f'{vertex.outer_radius/vertex.inner_radius}Z{vertex.id}')
+            elif isinstance(vertex,RectanglemonQubit):
+                output.append(f'{(vertex.rect_one_height*vertex.rect_one_length)/(vertex.rect_two_height*vertex.rect_two_length)}Z{vertex.id}')
+            else:
+                output.append(f'{vertex.frequency/2}Z{vertex.id}')
 
         for edge in self.graph.get_edges():
             start_vertex, end_vertex = edge
