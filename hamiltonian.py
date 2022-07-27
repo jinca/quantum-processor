@@ -18,11 +18,29 @@ class Qubit:
     def add_neighbor(self, neighbor, strength=0):
         self.adjacent[neighbor] = strength
 
+    """ Get the adjacent vertices """
     def get_connections(self):
         return self.adjacent.keys()  
 
+    """ Get the value of frequency """
     def get_frequency(self, neighbor):
         return self.adjacent[neighbor]
+
+class CoaxmonQubit(Qubit):
+    
+    def __init__(self, id, outer_radius, inner_radius):
+        self.id = id
+        self.outer_radius = outer_radius
+        self.inner_radius = inner_radius
+
+class RectanglemonQubit(Qubit):
+
+    def __init__(self, id, rect_one_height,rect_one_length, rect_two_height, rect_two_length):
+        self.id = id
+        self.rect_one_height = rect_one_height
+        self.rect_one_length = rect_one_length
+        self.rect_two_height = rect_two_height
+        self.rect_two_length = rect_two_length
 
 class Graph:
     def __init__(self):
