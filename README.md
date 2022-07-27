@@ -20,3 +20,7 @@ This repo contains the following files to see the answer for the Math problem:
 
 3. math_problem.tex
 4. math.pdf
+
+To see the answer, you might copy the source code in any Latex program such as TeXstudio.
+
+If you want to see it online, you might use [Overleaf](https://www.overleaf.com) and copy the content in a **New project**.
