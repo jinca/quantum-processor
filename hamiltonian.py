@@ -53,6 +53,9 @@ class Graph:
     def get_vertices(self):
         return self.vert_dict.values()
 
+    def get_edges(self):
+        return []
+
 class Hamiltonian:
 
     def __init__(self, graph):
@@ -62,11 +65,11 @@ class Hamiltonian:
         output = []
 
         for index, vertex in enumerate(self.graph.get_vertices()):
-            #print(index, vertex, type(vertex))
-            print(type(vertex.frequency))
-            #result = vertex.frequency/2
-            #output.append(f'{result}Z{index+1}')
-            print(''.join(output))
+            output.append(f'{vertex.frequency/2}Z{index+1}')
+
+        for index,edge in enumerate(self.graph.get_edges()):
+            output.append(f'')
+        return output
 
     def print_Hamiltonian(self):
-        pass
+        print('H=',''.join(self.sum()))
