@@ -55,10 +55,12 @@ class Graph:
         return self.vert_dict.values()
 
     def get_edges(self):
+        output = []
+        """ __vertex is the inner vertex"""
         for vertex in self.get_vertices():
-            for _vertex,_strength in vertex.adjacent.items():
-                print(vertex,_vertex,_strength)
-        return []
+            for _vertex in vertex.adjacent.keys():
+                output.append((vertex,_vertex))
+        return output
 
 class Hamiltonian:
 
@@ -72,7 +74,8 @@ class Hamiltonian:
             output.append(f'{vertex.frequency/2}Z{vertex.id}')
 
         for index,edge in enumerate(self.graph.get_edges()):
-            output.append(f'')
+            print(edge)
+            #output.append(f'')
         return output
 
     def print_Hamiltonian(self):
