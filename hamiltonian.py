@@ -54,6 +54,9 @@ class Graph:
         return self.vert_dict.values()
 
     def get_edges(self):
+        for vertex in self.get_vertices():
+            for _vertex,_strength in vertex.adjacent.items():
+                print(vertex,_vertex,_strength)
         return []
 
 class Hamiltonian:

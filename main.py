@@ -6,7 +6,6 @@ v3 = hamiltonian.Vertex(5.5)
 v4 = hamiltonian.Vertex(12.2)
 
 graph = hamiltonian.Graph()
-
 graph.add_vertex(v1)
 graph.add_vertex(v2)
 graph.add_vertex(v3)
