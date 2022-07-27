@@ -43,7 +43,9 @@ where \textit{i} is the imaginary number, find the eigenvalues of the matrix
 \[ H =\frac{\Omega_x}{2}\sigma_x \ \ + 	\ \ \frac{\Omega_y}{2}\sigma_y + 	\ \ \frac{\omega}{2}\sigma_z \]
 
 where $\Omega_x \and \Omega_y$ are real scalars
+
 \subsection{Solution}
+\vspace{0.5cm}
 
 a) Substitution into formula
 
@@ -87,13 +89,30 @@ H = \begin{pmatrix}
     \end{pmatrix} 
 \end{equation}
 
-\vspace{0.5cm}
+
+\vspace{2cm}
 
 b) Applying the definition of eigenvalues
 
 \vspace{0.5cm}
 \begin{vmatrix}
 H - $$\lambda I$$ 
-\end{vmatrix} = 0
+\end{vmatrix} 
+= 0
+
+
+\begin{equation}
+\begin{vmatrix}
+    \begin{pmatrix}
+    \frac{\omega}{2} & \frac{\Omega_x - i\Omega_y}{2} \\
+    \frac{\Omega_x + i\Omega_y}{2} & -\frac{\omega}{2}
+    \end{pmatrix} -
+    \begin{pmatrix}
+    \lambda & 0\\
+    0 & -\lambda
+    \end{pmatrix}
+\end{vmatrix}
+\end{equation}
+
 
 \end{document}
