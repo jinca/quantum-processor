@@ -34,17 +34,12 @@ class Graph:
     def __iter__(self):
         return iter(self.vert_dict.values())
 
-    def add_vertex(self, node):
+    def add_vertex(self, vertex):
         self.num_vertices = self.num_vertices + 1
-        new_vertex = Vertex(node)
-        self.vert_dict[node] = new_vertex
-        return new_vertex
+        self.vert_dict[vertex] = vertex
 
-    def get_vertex(self, n):
-        if n in self.vert_dict:
-            return self.vert_dict[n]
-        else:
-            return None
+    def get_vertex(self, vertex):
+        self.vert_dict.get(vertex)
 
     def add_edge(self, frm, to, cost = 0):
         if frm not in self.vert_dict:
@@ -64,7 +59,14 @@ class Hamiltonian:
         self.graph = graph
 
     def sum(self):
-        print(self.graph.get_vertices())
+        output = []
+
+        for index, vertex in enumerate(self.graph.get_vertices()):
+            #print(index, vertex, type(vertex))
+            print(type(vertex.frequency))
+            #result = vertex.frequency/2
+            #output.append(f'{result}Z{index+1}')
+            print(''.join(output))
 
     def print_Hamiltonian(self):
         pass
