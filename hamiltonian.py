@@ -56,12 +56,15 @@ class Graph:
         self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
 
     def get_vertices(self):
-        return self.vert_dict.keys()
+        return self.vert_dict.values()
 
 class Hamiltonian:
 
-    def sum_frequency(self):
-        pass
+    def __init__(self, graph):
+        self.graph = graph
+
+    def sum(self):
+        print(self.graph.get_vertices())
 
     def print_Hamiltonian(self):
         pass

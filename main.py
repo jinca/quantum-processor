@@ -19,5 +19,5 @@ graph.add_edge(v4, v1, 0.55)
 print(v1, v2, v3, v4)
 print(graph)
 
-h = hamiltonian.Hamiltonian()
-h.print_Hamiltonian()
+h = hamiltonian.Hamiltonian(graph)
+h.sum()
